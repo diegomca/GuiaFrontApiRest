@@ -24,7 +24,8 @@ function ListarSuperHeroes() {
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
-  };
+  }; 
+  //aSasa
 
   useEffect(() => {
     const getData = async () => {
