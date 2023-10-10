@@ -1,7 +1,8 @@
 import React from "react";
 import PageContainer from "../../components/container/PageContainer";
 import { Box, Button, Typography } from "@mui/material";
-import ListarSuperHeroes from "./components/ListarSuperHeroes";
+import ListarTareas from "./components/ListarTareas";
+import image1 from "../../assets/image/image1.png";
 
 function Home() {
   return (
@@ -12,11 +13,18 @@ function Home() {
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
-          backgroundImage:
-            "url(https://images6.alphacoders.com/705/705204.jpg)",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPositionY: "18%",
+          ":before": {
+            content: '""',
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "600px",
+            backgroundImage: `url(${image1})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            filter: "blur(2px)",
+          },
         }}
         minHeight={600}
       >
@@ -36,35 +44,11 @@ function Home() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
+              zIndex: 1,
             }}
           >
-            Super Hero App
+            Gestiona tus tareas
           </Typography>
-          <Typography
-            variant="h4"
-            component="h2"
-            sx={{
-              color: "white",
-              textShadow: "2px 2px 4px #000000",
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-            }}
-          >
-            Busca tu super heroe favorito
-          </Typography>
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            sx={{
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-            }}
-          >
-            Comenzar!
-          </Button>
         </Box>
       </Box>
       <Box
@@ -72,7 +56,7 @@ function Home() {
         display="flex"
         flexDirection="column"
         gap={5}
-        alignItems="center"
+        alignItems="start"
       >
         <Typography
           variant="h4"
@@ -85,9 +69,9 @@ function Home() {
             textShadow: "2px 2px 4px #000000",
           }}
         >
-          Listado de super heroes
+          Mis tareas
         </Typography>
-        <ListarSuperHeroes />
+        <ListarTareas />
       </Box>
     </PageContainer>
   );
